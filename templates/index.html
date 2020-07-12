@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 1</title>
+
+    <!-- Styles -->
+    <link href="{{ url_for('static', filename='./css/singleuser.css') }}" rel="stylesheet">
+</head>
+    <body>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+            {% for user in users%}
+            <tr>
+                <td><a href="/viewuser/{{user.user_id}}">{{user.first_name}}</a></td>
+                <td>{{user.age}}</td>
+                
+            </tr>
+            {% endfor %}
+        </table>
+        
+    </body>
+</html>

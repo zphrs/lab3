@@ -1,0 +1,41 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="{{ url_for('static', filename='./css/adduser.css') }}" rel="stylesheet">
+</head>
+<h1 style="font-family: arial;">Add user:</h1>
+<form method="POST" action="/adduser" class="form">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.first_name.label }}:
+        {{ form.first_name }}
+        {% if form.first_name.errors %}
+            {% for error in form.first_name.errors %}
+                <p class="user-error-message">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+    </div class="form">
+    <div>
+        {{ form.age.label }}:
+        {{ form.age }}
+        {% if form.age.errors %}
+            {% for error in form.age.errors %}
+                <p class="user-error-message">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div>
+        {{ form.password.label }}:
+        {{ form.password }}
+        {% if form.password.errors %}
+            {% for error in form.passhash.errors %}
+                <p class="user-error-message">{{ error }}</p>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <div>
+        <input type="submit" class="select" value="Done">
+    </div>
+</form>

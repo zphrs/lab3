@@ -1,0 +1,10 @@
+.table {
+    font-family: arial;
+    border-radius: 25px;
+    border: 4px solid black;
+    border-spacing: 5px;
+    text-align:center;
+    width:100%;
+    max-width: 1500px;
+    font-size: large;
+}
