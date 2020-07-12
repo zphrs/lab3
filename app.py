@@ -7,8 +7,9 @@ import sqlalchemy.dialects.postgresql.psycopg2
 import hashlib
 import random
 import string
+from flask_heroku import Heroku
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://postgres:Code-321@localhost:5432/usersdb'
+heroku = Heroku(app)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.secret_key = "s14a-key"
 Db.init_app(app)
